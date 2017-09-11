@@ -15,6 +15,8 @@ class ProviderListTableViewController: UITableViewController {
         super.viewDidLoad()
         
     ProviderController.shared.fetchedResultsController1.delegate = self
+        
+        tableView.backgroundColor = UIColor(patternImage: UIImage(named: "background_1.jpg")!)
 
     }
 
@@ -42,6 +44,7 @@ class ProviderListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "providerCell", for: indexPath)
         let provider = ProviderController.shared.fetchedResultsController1.object(at: indexPath)
         cell.textLabel?.text = provider.name
+        cell.backgroundColor = .clear
         return cell
     }
  

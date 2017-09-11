@@ -12,12 +12,15 @@ class DaySummaryViewController: UIViewController {
     
     var mood: Mood?
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var view2: UIView!
     @IBOutlet weak var dateLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_1.jpg")!)
+        self.view2.backgroundColor = UIColor(patternImage: UIImage(named: "background_1.jpg")!)
+        scrollView.keyboardDismissMode = .onDrag
         
         updateMood()
         
@@ -27,8 +30,6 @@ class DaySummaryViewController: UIViewController {
         dateLabel.text = Date().stringValue()
         
         saveButton.layer.cornerRadius = 15.0
-        NotificationCenter.default.addObserver(self, selector: #selector(DaySummaryViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(DaySummaryViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         exerciseTextField.keyboardType = .numberPad
         sleepTextField.keyboardType = .decimalPad
@@ -39,26 +40,8 @@ class DaySummaryViewController: UIViewController {
         super.viewWillAppear(animated)
         updateMood()
     }
-    
-    func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0{
-                self.view.frame.origin.y -= keyboardSize.height
-            }
-        }
-    }
-    
-    func keyboardWillHide(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y != 0{
-                self.view.frame.origin.y += keyboardSize.height
-            }
-        }
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
+
+
     
     func updateMood(){
         if mood != nil {

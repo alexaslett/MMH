@@ -17,6 +17,6 @@ class Mood {
         self.moodName = moodName
         self.moodState = moodState
     }
-    
+
     
 }

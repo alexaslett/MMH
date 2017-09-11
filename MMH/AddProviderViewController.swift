@@ -23,7 +23,7 @@ class AddProviderViewController: UIViewController {
             isCurrentSwitch.isOn = provider.isCurrent
             notesTextField.text = provider.notes
         }
-        
+     view.backgroundColor = UIColor(patternImage: UIImage(named: "background_1.jpg")!)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

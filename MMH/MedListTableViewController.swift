@@ -15,7 +15,7 @@ class MedListTableViewController: UITableViewController {
         super.viewDidLoad()
 
         MedicationController.shared.fetchedResultsController.delegate = self
-        
+        tableView.backgroundColor = UIColor(patternImage: UIImage(named: "background_1.jpg")!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,6 +43,7 @@ class MedListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "medCell", for: indexPath)
         let med = MedicationController.shared.fetchedResultsController.object(at: indexPath)
         cell.textLabel?.text = med.medName
+        cell.backgroundColor = .clear
         return cell
     }
  

@@ -37,6 +37,8 @@ class MedAddViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(MedAddViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(MedAddViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "background_1.jpg")!)
     }
     
     

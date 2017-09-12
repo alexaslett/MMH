@@ -47,11 +47,13 @@ class MedicationController {
     
     //U
     //FIXME: Need to add support for the dates changing as well
-    func update(medication: Medication, newName: String, newDosage: String, newNotes: String, newIsCurrent: Bool){
+    func update(medication: Medication, newName: String, newDosage: String, newNotes: String, newIsCurrent: Bool, newStartDate: Date, newEndDate: Date){
         medication.medName = newName
         medication.dosage = newDosage
         medication.notes = newNotes
         medication.isCurrent = newIsCurrent
+        medication.startDate = newStartDate as NSDate
+        medication.endDate = newEndDate as NSDate
         saveTopersistentStore()
     }
     

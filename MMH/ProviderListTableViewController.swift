@@ -76,7 +76,7 @@ class ProviderListTableViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toEditProvider" {
-            guard let indexPath = tableView.indexPathForSelectedRow, let destinationVC = segue.destination as? AddProviderViewController else { return }
+            guard let indexPath = tableView.indexPathForSelectedRow, let destinationVC = segue.destination as? AddProviderTableViewController else { return }
             let provider = ProviderController.shared.fetchedResultsController1.object(at: indexPath)
             destinationVC.provider = provider
         }

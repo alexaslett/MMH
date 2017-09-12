@@ -20,6 +20,7 @@ class DaySummaryViewController: UIViewController {
         super.viewDidLoad()
         
         self.view2.backgroundColor = UIColor(patternImage: UIImage(named: "background_1.jpg")!)
+        
         scrollView.keyboardDismissMode = .onDrag
         
         updateMood()
@@ -30,11 +31,33 @@ class DaySummaryViewController: UIViewController {
         dateLabel.text = Date().stringValue()
         
         saveButton.layer.cornerRadius = 15.0
+        saveButton.backgroundColor = UIColor(red: 0/255, green: 173/255, blue: 225/255, alpha: 1)
         
         exerciseTextField.keyboardType = .numberPad
         sleepTextField.keyboardType = .decimalPad
         
+        NotificationCenter.default.addObserver(self, selector: #selector(DaySummaryViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(DaySummaryViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
     }
+    
+    
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.scrollView.frame.origin.y == 0{
+                self.scrollView.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.scrollView.frame.origin.y != 0{
+                self.scrollView.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

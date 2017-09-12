@@ -1,16 +1,18 @@
 //
-//  MedAddViewController.swift
+//  MedAddTableViewController.swift
 //  MMH
 //
-//  Created by Alex Aslett on 8/29/17.
+//  Created by Alex Aslett on 9/12/17.
 //  Copyright © 2017 One Round Technology. All rights reserved.
 //
 
 import UIKit
 
-class MedAddViewController: UIViewController {
+class MedAddTableViewController: UITableViewController {
     
-    var medication: Medication?
+    @IBOutlet var startDatePicker: UIDatePicker!
+    
+    @IBOutlet var endDatePicker: UIDatePicker!
     
     @IBOutlet weak var medNameTextField: UITextField!
     @IBOutlet weak var dosageTextField: UITextField!
@@ -20,6 +22,8 @@ class MedAddViewController: UIViewController {
     @IBOutlet weak var notesTextField: UITextView!
     
     var medName: String?
+    
+    var medication: Medication?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,47 +36,43 @@ class MedAddViewController: UIViewController {
             medNameTextField.text = medication.medName
             dosageTextField.text = medication.dosage
             isCurrentSwitch.isOn = medication.isCurrent
+            startDateField.text = medication.startDate?.stringValue()
+            endDateField.text = medication.endDate?.stringValue()
             notesTextField.text = medication.notes
         }
         
-        NotificationCenter.default.addObserver(self, selector: #selector(MedAddViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(MedAddViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        tableView.backgroundColor = UIColor(patternImage: UIImage(named: "background_1.jpg")!)
         
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "background_1.jpg")!)
+        startDatePicker.datePickerMode = .date
+        endDatePicker.datePickerMode = .date
+        
+        startDateField.inputView = startDatePicker
+        endDateField.inputView = endDatePicker
+        
+        
+    }
+    
+    @IBAction func startDatePickerChanged(_ sender: Any) {
+        startDateField.text = startDatePicker.date.stringValue()
+        
+    }
+    
+    @IBAction func endDatePickerChanged(_ sender: Any) {
+        endDateField.text = endDatePicker.date.stringValue()
     }
     
     
-    func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0{
-                self.view.frame.origin.y -= keyboardSize.height
-            }
-        }
-    }
-    
-    func keyboardWillHide(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y != 0{
-                self.view.frame.origin.y += keyboardSize.height
-            }
-        }
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-
     @IBAction func saveButtonTapped(_ sender: Any) {
+        
         if medication == nil {
             guard let medName1 = medNameTextField.text, medName1 != "", let dosage = dosageTextField.text, dosage != "", let notes = notesTextField.text else { return }
-            MedicationController.shared.addMed(medName: medName1, dosage: dosage, isCurrent: isCurrentSwitch.isOn, startDate: nil, endDate: nil, notes: notes)
+            MedicationController.shared.addMed(medName: medName1, dosage: dosage, isCurrent: isCurrentSwitch.isOn, startDate: startDatePicker.date, endDate: endDatePicker.date, notes: notes)
         } else {
             guard let medication = medication, let medName1 = medNameTextField.text, medName1 != "", let dosage = dosageTextField.text, dosage != "", let notes = notesTextField.text else { return }
-            MedicationController.shared.update(medication: medication, newName: medName1, newDosage: dosage, newNotes: notes, newIsCurrent: isCurrentSwitch.isOn )
+            MedicationController.shared.update(medication: medication, newName: medName1, newDosage: dosage, newNotes: notes, newIsCurrent: isCurrentSwitch.isOn, newStartDate: startDatePicker.date, newEndDate: endDatePicker.date)
         }
         self.poptoSpecificVC(viewController: MedListTableViewController.self)
     }
-    
     
     func poptoSpecificVC(viewController : Swift.AnyClass){
         let viewControllers: [UIViewController] = self.navigationController!.viewControllers
@@ -86,4 +86,3 @@ class MedAddViewController: UIViewController {
     
     
 }
-

@@ -24,10 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().barTintColor = UIColor(red: 0/255, green: 173/255, blue: 225/255, alpha: 1)
         UITabBar.appearance().tintColor = UIColor.black
         
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginViewController
+        self.window?.rootViewController = loginVC
     
         return true
     }
-
+ 
+    
     
 }
 

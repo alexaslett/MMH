@@ -26,13 +26,15 @@
 		4D8D998E1F55E3F60045F03B /* MedListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D998D1F55E3F60045F03B /* MedListTableViewController.swift */; };
 		4D8D99901F5625680045F03B /* ProviderListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D998F1F5625680045F03B /* ProviderListTableViewController.swift */; };
 		4D8D99951F563F940045F03B /* DayListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D99941F563F940045F03B /* DayListTableViewController.swift */; };
-		4D8D999C1F5725F90045F03B /* GraphChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D999B1F5725F90045F03B /* GraphChartViewController.swift */; };
+		4D8D999C1F5725F90045F03B /* GraphChartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D999B1F5725F90045F03B /* GraphChartTableViewController.swift */; };
 		4D8D999E1F575AE80045F03B /* DateHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D999D1F575AE80045F03B /* DateHelpers.swift */; };
 		4D8D99A21F587C220045F03B /* MoodSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D99A11F587C220045F03B /* MoodSelectionViewController.swift */; };
 		4D8D99A41F587C490045F03B /* MoodConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D99A31F587C490045F03B /* MoodConroller.swift */; };
 		4D8D99A61F587FED0045F03B /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D99A51F587FED0045F03B /* Mood.swift */; };
 		4DB94FD21F673C2E001A1B84 /* AddProviderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB94FD11F673C2E001A1B84 /* AddProviderTableViewController.swift */; };
 		4DB94FD61F68311C001A1B84 /* MedAddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB94FD51F68311C001A1B84 /* MedAddTableViewController.swift */; };
+		4DB94FD91F68887C001A1B84 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB94FD81F68887C001A1B84 /* LoginViewController.swift */; };
+		4DB94FDC1F689455001A1B84 /* TouchIDAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB94FDB1F689455001A1B84 /* TouchIDAuthentication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,13 +58,15 @@
 		4D8D998D1F55E3F60045F03B /* MedListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedListTableViewController.swift; sourceTree = "<group>"; };
 		4D8D998F1F5625680045F03B /* ProviderListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderListTableViewController.swift; sourceTree = "<group>"; };
 		4D8D99941F563F940045F03B /* DayListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayListTableViewController.swift; sourceTree = "<group>"; };
-		4D8D999B1F5725F90045F03B /* GraphChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphChartViewController.swift; sourceTree = "<group>"; };
+		4D8D999B1F5725F90045F03B /* GraphChartTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphChartTableViewController.swift; sourceTree = "<group>"; };
 		4D8D999D1F575AE80045F03B /* DateHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelpers.swift; sourceTree = "<group>"; };
 		4D8D99A11F587C220045F03B /* MoodSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodSelectionViewController.swift; sourceTree = "<group>"; };
 		4D8D99A31F587C490045F03B /* MoodConroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodConroller.swift; sourceTree = "<group>"; };
 		4D8D99A51F587FED0045F03B /* Mood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
 		4DB94FD11F673C2E001A1B84 /* AddProviderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProviderTableViewController.swift; sourceTree = "<group>"; };
 		4DB94FD51F68311C001A1B84 /* MedAddTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedAddTableViewController.swift; sourceTree = "<group>"; };
+		4DB94FD81F68887C001A1B84 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4DB94FDB1F689455001A1B84 /* TouchIDAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchIDAuthentication.swift; sourceTree = "<group>"; };
 		4DDF6E586B367449AD92CD03 /* Pods-MMH.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMH.release.xcconfig"; path = "Pods/Target Support Files/Pods-MMH/Pods-MMH.release.xcconfig"; sourceTree = "<group>"; };
 		D2CF91264FB0FAC5DE7DCFC1 /* Pods-MMH.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMH.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MMH/Pods-MMH.debug.xcconfig"; sourceTree = "<group>"; };
 		F534F4FBA3A7FA1E01E2600E /* Pods_MMH.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MMH.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +113,7 @@
 		4D8D99591F54BEEB0045F03B /* MMH */ = {
 			isa = PBXGroup;
 			children = (
+				4DB94FDA1F68943A001A1B84 /* TouchID */,
 				4D8D997E1F55CBFC0045F03B /* Models */,
 				4D8D995A1F54BEEB0045F03B /* AppDelegate.swift */,
 				4D8D99781F55C8460045F03B /* CoreDataStack.swift */,
@@ -142,6 +147,7 @@
 		4D8D99721F55BF6B0045F03B /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4DB94FD81F68887C001A1B84 /* LoginViewController.swift */,
 				4DB94FD71F6839A7001A1B84 /* Graphs */,
 				4D8D99851F55D1B50045F03B /* Medication */,
 				4D8D99961F56456C0045F03B /* Day */,
@@ -206,9 +212,17 @@
 		4DB94FD71F6839A7001A1B84 /* Graphs */ = {
 			isa = PBXGroup;
 			children = (
-				4D8D999B1F5725F90045F03B /* GraphChartViewController.swift */,
+				4D8D999B1F5725F90045F03B /* GraphChartTableViewController.swift */,
 			);
 			name = Graphs;
+			sourceTree = "<group>";
+		};
+		4DB94FDA1F68943A001A1B84 /* TouchID */ = {
+			isa = PBXGroup;
+			children = (
+				4DB94FDB1F689455001A1B84 /* TouchIDAuthentication.swift */,
+			);
+			name = TouchID;
 			sourceTree = "<group>";
 		};
 		BD135E8CF25E8EBB3E216F86 /* Pods */ = {
@@ -352,7 +366,8 @@
 			files = (
 				4D8D998E1F55E3F60045F03B /* MedListTableViewController.swift in Sources */,
 				4D8D99881F55DBF30045F03B /* DayController.swift in Sources */,
-				4D8D999C1F5725F90045F03B /* GraphChartViewController.swift in Sources */,
+				4D8D999C1F5725F90045F03B /* GraphChartTableViewController.swift in Sources */,
+				4DB94FD91F68887C001A1B84 /* LoginViewController.swift in Sources */,
 				4DB94FD61F68311C001A1B84 /* MedAddTableViewController.swift in Sources */,
 				4D8D997D1F55CAD80045F03B /* Provider+Convenience.swift in Sources */,
 				4D8D99951F563F940045F03B /* DayListTableViewController.swift in Sources */,
@@ -363,6 +378,7 @@
 				4D8D995B1F54BEEB0045F03B /* AppDelegate.swift in Sources */,
 				4D8D99821F55CEF80045F03B /* MedSearchController.swift in Sources */,
 				4D8D99A21F587C220045F03B /* MoodSelectionViewController.swift in Sources */,
+				4DB94FDC1F689455001A1B84 /* TouchIDAuthentication.swift in Sources */,
 				4D8D99901F5625680045F03B /* ProviderListTableViewController.swift in Sources */,
 				4DB94FD21F673C2E001A1B84 /* AddProviderTableViewController.swift in Sources */,
 				4D8D99A61F587FED0045F03B /* Mood.swift in Sources */,

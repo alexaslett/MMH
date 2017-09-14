@@ -41,6 +41,7 @@ class DaySummaryViewController: UIViewController {
         
     }
     
+   
     
     func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
@@ -62,6 +63,7 @@ class DaySummaryViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateMood()
+        dateLabel.text = Date().stringValue()
     }
 
 

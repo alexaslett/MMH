@@ -32,6 +32,13 @@ class LoginViewController: UIViewController {
         appDelegate.window?.rootViewController = tabBarController
     }
     
+//    func wantToUseTouchID(){
+//        let alertController = UIAlertController(title: "Secure your App", message: "Do you want to use TouchID to secure your data?", preferredStyle: .alert)
+//        
+//        
+//    }
+    
+    
    
     
     

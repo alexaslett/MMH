@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		14B94B4F0E584FAAC85AEB20 /* Pods_MMH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F534F4FBA3A7FA1E01E2600E /* Pods_MMH.framework */; };
+		4D1163111F6B38B400EDE591 /* DaySummaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1163101F6B38B400EDE591 /* DaySummaryTableViewController.swift */; };
 		4D8D995B1F54BEEB0045F03B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D995A1F54BEEB0045F03B /* AppDelegate.swift */; };
 		4D8D99601F54BEEB0045F03B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D995E1F54BEEB0045F03B /* Main.storyboard */; };
 		4D8D99621F54BEEB0045F03B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D99611F54BEEB0045F03B /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D1163101F6B38B400EDE591 /* DaySummaryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaySummaryTableViewController.swift; sourceTree = "<group>"; };
 		4D8D99571F54BEEB0045F03B /* MMH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D8D995A1F54BEEB0045F03B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D8D995F1F54BEEB0045F03B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				4D8D996D1F54C3A80045F03B /* DaySummaryViewController.swift */,
 				4D8D99941F563F940045F03B /* DayListTableViewController.swift */,
 				4D8D99A11F587C220045F03B /* MoodSelectionViewController.swift */,
+				4D1163101F6B38B400EDE591 /* DaySummaryTableViewController.swift */,
 			);
 			name = Day;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				4DB94FD61F68311C001A1B84 /* MedAddTableViewController.swift in Sources */,
 				4D8D997D1F55CAD80045F03B /* Provider+Convenience.swift in Sources */,
 				4D8D99951F563F940045F03B /* DayListTableViewController.swift in Sources */,
+				4D1163111F6B38B400EDE591 /* DaySummaryTableViewController.swift in Sources */,
 				4D8D996E1F54C3A80045F03B /* DaySummaryViewController.swift in Sources */,
 				4D8D998C1F55DC8D0045F03B /* ProviderController.swift in Sources */,
 				4D8D99751F55BFA70045F03B /* MMH.xcdatamodeld in Sources */,

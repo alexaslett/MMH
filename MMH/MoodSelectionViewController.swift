@@ -127,7 +127,7 @@ class MoodSelectionViewController: UIViewController, UITableViewDataSource, UITa
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "backToDayView" {
-            guard let controller = segue.destination as? DaySummaryViewController else { return }
+            guard let controller = segue.destination as? DaySummaryTableViewController else { return }
             guard let sendMood = mood else { return }
             controller.mood = sendMood
         }

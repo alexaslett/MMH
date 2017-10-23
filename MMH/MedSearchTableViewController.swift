@@ -25,7 +25,7 @@ class MedSearchTableViewController: UITableViewController, UISearchBarDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.backgroundColor = UIColor(patternImage: UIImage(named: "background_1.jpg")!)
+        tableView.backgroundColor = UIColor.specialGray
     }
 
     var suggestions: [String] = []

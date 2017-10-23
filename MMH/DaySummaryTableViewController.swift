@@ -15,7 +15,7 @@ class DaySummaryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.backgroundColor = UIColor(patternImage: UIImage(named: "background_1.jpg")!)
+        self.tableView.backgroundColor = UIColor.specialGray
 
         updateMood()
         
@@ -26,6 +26,7 @@ class DaySummaryTableViewController: UITableViewController {
         
         exerciseTextField.keyboardType = .numberPad
         sleepTextField.keyboardType = .decimalPad
+        calcButton.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,18 +45,18 @@ class DaySummaryTableViewController: UITableViewController {
     @IBOutlet weak var sleepTextField: UITextField!
     @IBOutlet weak var exerciseTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var medsTakenSwitch: UISwitch!
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var datePicker2: UIDatePicker!
+    @IBOutlet weak var calcButton: UIButton!
     
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let mood = mood, let tempSleep = sleepTextField.text, let tempMinExercised = exerciseTextField.text, let sleep = Double(tempSleep), let minExcercised = Int64(tempMinExercised) else { return }
-        DayController.shared.addDay(dayDate: Date(), moodName: mood.moodName, moodState: mood.moodState, hrSlept: sleep, minExercised: minExcercised, medsTaken: medsTakenSwitch.isOn)
+        DayController.shared.addDay(dayDate: Date(), moodName: mood.moodName, moodState: mood.moodState, hrSlept: sleep, minExercised: minExcercised)
         moodLabel.text = "-Mood-" //FIXME: This isn't working, because of the updateMood Function
         sleepTextField.text = ""
         exerciseTextField.text = ""
-        medsTakenSwitch.isOn = false
+
         
         let daySummeryVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DayListTableViewController")
         self.navigationController?.pushViewController(daySummeryVC, animated: true)
@@ -124,6 +125,27 @@ class DaySummaryTableViewController: UITableViewController {
     
     @IBAction func UnwindToDayVC(segue:UIStoryboardSegue) {
         updateMood()
+    }
+
+    func wantToUseTouchID(){
+        let alertController = UIAlertController(title: "Secure your App", message: "Do you want to use TouchID to secure your data?", preferredStyle: .alert)
+        
+        let yesAction = UIAlertAction(title: "Yes", style: .default) { (_) in
+            let defaults = UserDefaults.standard
+            defaults.set(true, forKey: "useTouchID")
+        }
+        
+        let noAction = UIAlertAction(title: "No", style: .default) { (_) in
+            let defaults = UserDefaults.standard
+            defaults.set(false, forKey: "useTouchID")
+            
+        }
+        
+        alertController.addAction(yesAction)
+        alertController.addAction(noAction)
+        
+        present(alertController, animated: true, completion: nil)
+        
     }
 
     

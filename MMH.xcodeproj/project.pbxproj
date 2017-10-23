@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		14B94B4F0E584FAAC85AEB20 /* Pods_MMH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F534F4FBA3A7FA1E01E2600E /* Pods_MMH.framework */; };
 		4D1163111F6B38B400EDE591 /* DaySummaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1163101F6B38B400EDE591 /* DaySummaryTableViewController.swift */; };
+		4D4C92431F98FD23000601E3 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D4C92421F98FD1B000601E3 /* LocalAuthentication.framework */; };
+		4D4C92451F9900ED000601E3 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4C92441F9900ED000601E3 /* Color.swift */; };
 		4D8D995B1F54BEEB0045F03B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D995A1F54BEEB0045F03B /* AppDelegate.swift */; };
 		4D8D99601F54BEEB0045F03B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D995E1F54BEEB0045F03B /* Main.storyboard */; };
 		4D8D99621F54BEEB0045F03B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D99611F54BEEB0045F03B /* Assets.xcassets */; };
 		4D8D99651F54BEEB0045F03B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D99631F54BEEB0045F03B /* LaunchScreen.storyboard */; };
-		4D8D996E1F54C3A80045F03B /* DaySummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D996D1F54C3A80045F03B /* DaySummaryViewController.swift */; };
 		4D8D99751F55BFA70045F03B /* MMH.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D99731F55BFA70045F03B /* MMH.xcdatamodeld */; };
 		4D8D99771F55C74C0045F03B /* Day+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D99761F55C74C0045F03B /* Day+Convenience.swift */; };
 		4D8D99791F55C8460045F03B /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D99781F55C8460045F03B /* CoreDataStack.swift */; };
@@ -40,13 +41,14 @@
 
 /* Begin PBXFileReference section */
 		4D1163101F6B38B400EDE591 /* DaySummaryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaySummaryTableViewController.swift; sourceTree = "<group>"; };
+		4D4C92421F98FD1B000601E3 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		4D4C92441F9900ED000601E3 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		4D8D99571F54BEEB0045F03B /* MMH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D8D995A1F54BEEB0045F03B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D8D995F1F54BEEB0045F03B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4D8D99611F54BEEB0045F03B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D8D99641F54BEEB0045F03B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D8D99661F54BEEB0045F03B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4D8D996D1F54C3A80045F03B /* DaySummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaySummaryViewController.swift; sourceTree = "<group>"; };
 		4D8D99741F55BFA70045F03B /* MMH.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MMH.xcdatamodel; sourceTree = "<group>"; };
 		4D8D99761F55C74C0045F03B /* Day+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Day+Convenience.swift"; sourceTree = "<group>"; };
 		4D8D99781F55C8460045F03B /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D4C92431F98FD23000601E3 /* LocalAuthentication.framework in Frameworks */,
 				14B94B4F0E584FAAC85AEB20 /* Pods_MMH.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,9 +92,19 @@
 		256782D6876B52F0B55AD79B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4D4C92421F98FD1B000601E3 /* LocalAuthentication.framework */,
 				F534F4FBA3A7FA1E01E2600E /* Pods_MMH.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4D353FEA1F950F14004318D3 /* HelperFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4D8D99781F55C8460045F03B /* CoreDataStack.swift */,
+				4D8D999D1F575AE80045F03B /* DateHelpers.swift */,
+			);
+			name = HelperFiles;
 			sourceTree = "<group>";
 		};
 		4D8D994E1F54BEEB0045F03B = {
@@ -115,15 +128,13 @@
 		4D8D99591F54BEEB0045F03B /* MMH */ = {
 			isa = PBXGroup;
 			children = (
+				4D353FEA1F950F14004318D3 /* HelperFiles */,
 				4DB94FDA1F68943A001A1B84 /* TouchID */,
 				4D8D997E1F55CBFC0045F03B /* Models */,
-				4D8D995A1F54BEEB0045F03B /* AppDelegate.swift */,
-				4D8D99781F55C8460045F03B /* CoreDataStack.swift */,
 				4D8D99711F55BF5E0045F03B /* Storyboards */,
 				4D8D996C1F54BF320045F03B /* Resources */,
 				4D8D99721F55BF6B0045F03B /* View Controllers */,
 				4D8D99861F55D8940045F03B /* Model Controllers */,
-				4D8D999D1F575AE80045F03B /* DateHelpers.swift */,
 			);
 			path = MMH;
 			sourceTree = "<group>";
@@ -131,9 +142,11 @@
 		4D8D996C1F54BF320045F03B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4D8D995A1F54BEEB0045F03B /* AppDelegate.swift */,
 				4D8D99611F54BEEB0045F03B /* Assets.xcassets */,
 				4D8D99631F54BEEB0045F03B /* LaunchScreen.storyboard */,
 				4D8D99661F54BEEB0045F03B /* Info.plist */,
+				4D4C92441F9900ED000601E3 /* Color.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -204,7 +217,6 @@
 		4D8D99961F56456C0045F03B /* Day */ = {
 			isa = PBXGroup;
 			children = (
-				4D8D996D1F54C3A80045F03B /* DaySummaryViewController.swift */,
 				4D8D99941F563F940045F03B /* DayListTableViewController.swift */,
 				4D8D99A11F587C220045F03B /* MoodSelectionViewController.swift */,
 				4D1163101F6B38B400EDE591 /* DaySummaryTableViewController.swift */,
@@ -267,12 +279,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "One Round Technology";
 				TargetAttributes = {
 					4D8D99561F54BEEB0045F03B = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = ZD63VKN8QT;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -375,7 +388,6 @@
 				4D8D997D1F55CAD80045F03B /* Provider+Convenience.swift in Sources */,
 				4D8D99951F563F940045F03B /* DayListTableViewController.swift in Sources */,
 				4D1163111F6B38B400EDE591 /* DaySummaryTableViewController.swift in Sources */,
-				4D8D996E1F54C3A80045F03B /* DaySummaryViewController.swift in Sources */,
 				4D8D998C1F55DC8D0045F03B /* ProviderController.swift in Sources */,
 				4D8D99751F55BFA70045F03B /* MMH.xcdatamodeld in Sources */,
 				4D8D99791F55C8460045F03B /* CoreDataStack.swift in Sources */,
@@ -384,6 +396,7 @@
 				4D8D99A21F587C220045F03B /* MoodSelectionViewController.swift in Sources */,
 				4DB94FDC1F689455001A1B84 /* TouchIDAuthentication.swift in Sources */,
 				4D8D99901F5625680045F03B /* ProviderListTableViewController.swift in Sources */,
+				4D4C92451F9900ED000601E3 /* Color.swift in Sources */,
 				4DB94FD21F673C2E001A1B84 /* AddProviderTableViewController.swift in Sources */,
 				4D8D99A61F587FED0045F03B /* Mood.swift in Sources */,
 				4D8D99771F55C74C0045F03B /* Day+Convenience.swift in Sources */,
@@ -427,7 +440,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -435,7 +450,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -477,7 +496,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -485,7 +506,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -520,7 +545,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.OneRoundTechnology.MMH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -534,7 +560,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.OneRoundTechnology.MMH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

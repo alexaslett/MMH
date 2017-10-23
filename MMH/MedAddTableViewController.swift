@@ -41,7 +41,7 @@ class MedAddTableViewController: UITableViewController {
             notesTextField.text = medication.notes
         }
         
-        tableView.backgroundColor = UIColor(patternImage: UIImage(named: "background_1.jpg")!)
+        tableView.backgroundColor = UIColor.specialGray
         
         startDatePicker.datePickerMode = .date
         endDatePicker.datePickerMode = .date

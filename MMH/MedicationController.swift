@@ -52,8 +52,8 @@ class MedicationController {
         medication.dosage = newDosage
         medication.notes = newNotes
         medication.isCurrent = newIsCurrent
-        medication.startDate = newStartDate as NSDate
-        medication.endDate = newEndDate as NSDate
+        medication.startDate = newStartDate
+        medication.endDate = newEndDate 
         saveTopersistentStore()
     }
     

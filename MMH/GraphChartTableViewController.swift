@@ -16,7 +16,7 @@ class GraphChartTableViewController: UITableViewController {
         updateGraph()
         updateExerciseGraph()
         updateMoodNumbers()
-        self.tableView.backgroundColor = UIColor(patternImage: UIImage(named: "background_1.jpg")!)
+        self.tableView.backgroundColor = UIColor.specialGray
         
     }
     
@@ -43,9 +43,9 @@ class GraphChartTableViewController: UITableViewController {
         var happyNum = 0
         var neutralNum = 0
         var sadNum = 0
-        
-        for i in 0..<DayController.shared.fetchedResultsController.fetchedObjects!.count {
-            guard let moodtype = DayController.shared.fetchedResultsController.fetchedObjects?[i].moodState else { return }
+
+        for i in 0..<DayController.shared.days.count {
+            guard let moodtype = DayController.shared.days[i].moodState else { return }
             switch moodtype {
             case "Happy":
                 happyNum += 1
@@ -56,28 +56,28 @@ class GraphChartTableViewController: UITableViewController {
             default:
                 break
             }
-            
+
         }
             happyNumLabel.text = "\(happyNum)"
             neutralNumLabel.text = "\(neutralNum)"
             sadNumLabel.text = "\(sadNum)"
-        
+
     }
     
     
     
     func updateExerciseGraph(){
         var lineChartEntry1 = [ChartDataEntry]()
-        
-        for i in 0..<DayController.shared.fetchedResultsController.fetchedObjects!.count {
-            let value = ChartDataEntry(x: Double(i), y: Double(DayController.shared.fetchedResultsController.fetchedObjects![i].minExercised))
+
+        for i in 0..<DayController.shared.days.count {
+            let value = ChartDataEntry(x: Double(i), y: Double(DayController.shared.days[i].minExercised))
             lineChartEntry1.append(value)
         }
         let line1 = LineChartDataSet(values: lineChartEntry1, label: "Exercise")
         line1.colors = [NSUIColor.blue]
         let data = LineChartData()
         data.addDataSet(line1)
-        
+
         exerciseChart.data = data
         exerciseChart.chartDescription?.text = "Exercise Chart"
     }
@@ -87,29 +87,19 @@ class GraphChartTableViewController: UITableViewController {
     
     func updateGraph() {
         var lineChartEntry = [ChartDataEntry]()
-        
-        for i in 0..<DayController.shared.fetchedResultsController.fetchedObjects!.count {
-            let value = ChartDataEntry(x: Double(i), y: DayController.shared.fetchedResultsController.fetchedObjects![i].hrSlept)
+
+        for i in 0..<DayController.shared.days.count {
+            let value = ChartDataEntry(x: Double(i), y: DayController.shared.days[i].hrSlept)
             lineChartEntry.append(value)
         }
         let line1 = LineChartDataSet(values: lineChartEntry, label: "Sleep")
         line1.colors = [NSUIColor.blue]
         let data = LineChartData()
         data.addDataSet(line1)
-        
+
         chtChart.data = data
         chtChart.chartDescription?.text = "Hours Slept"
     }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

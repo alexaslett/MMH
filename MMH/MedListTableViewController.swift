@@ -15,7 +15,7 @@ class MedListTableViewController: UITableViewController {
         super.viewDidLoad()
 
         MedicationController.shared.fetchedResultsController.delegate = self
-        tableView.backgroundColor = UIColor(patternImage: UIImage(named: "background_1.jpg")!)
+        tableView.backgroundColor = UIColor.specialGray
     }
     
     override func viewWillAppear(_ animated: Bool) {

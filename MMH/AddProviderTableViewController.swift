@@ -36,7 +36,7 @@ class AddProviderTableViewController: UITableViewController {
             notesTextField.text = provider.notes
         }
         
-        tableView.backgroundColor = UIColor(patternImage: UIImage(named: "background_1.jpg")!)
+        tableView.backgroundColor = UIColor.specialGray
         
         //tableView.keyboardDismissMode = .onDrag
         

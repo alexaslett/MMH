@@ -16,8 +16,7 @@ class ProviderListTableViewController: UITableViewController {
         
     ProviderController.shared.fetchedResultsController1.delegate = self
         
-        tableView.backgroundColor = UIColor(patternImage: UIImage(named: "background_1.jpg")!)
-
+        tableView.backgroundColor = UIColor.specialGray
     }
 
     override func viewWillAppear(_ animated: Bool) {

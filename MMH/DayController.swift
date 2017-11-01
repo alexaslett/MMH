@@ -13,26 +13,33 @@ class DayController {
     
     static let shared = DayController()
     
-    let fetchedResultsController: NSFetchedResultsController<Day>
+    var days: [Day] {
+        let request: NSFetchRequest<Day> = Day.fetchRequest()
+        return (try? CoreDataStack.context.fetch(request)) ?? []
+    }
     
-    init() {
+    /*
+    let fetchedResultsController: NSFetchedResultsController<Day> = {
         let request: NSFetchRequest<Day> = Day.fetchRequest()
         let dateSortDescriptor = NSSortDescriptor(key: "dayDate", ascending: true)
         request.sortDescriptors = [dateSortDescriptor]
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: CoreDataStack.context, sectionNameKeyPath: nil, cacheName: nil)
+        return NSFetchedResultsController(fetchRequest: request, managedObjectContext: CoreDataStack.context, sectionNameKeyPath: nil, cacheName: nil)
+    }()
+    
+    init() {
         
         do {
             try fetchedResultsController.performFetch()
         } catch let error as NSError {
             print("Unable to perform fetch request \(error.localizedDescription)")
         }
-    }
+    } */
     
     
     //C
     
-    func addDay(dayDate: Date, moodName: String, moodState: String, hrSlept: Double, minExercised: Int64, medsTaken: Bool) {
-        let _ = Day(dayDate: dayDate, hrSlept: hrSlept, minExercised: minExercised, moodName: moodName, moodState: moodState, medsTaken: medsTaken)
+    func addDay(dayDate: Date, moodName: String, moodState: String, hrSlept: Double, minExercised: Int64) {
+        let _ = Day(dayDate: dayDate, hrSlept: hrSlept, minExercised: minExercised, moodName: moodName, moodState: moodState)
         saveTopersistentStore()
     }
     

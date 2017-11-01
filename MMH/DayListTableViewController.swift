@@ -13,10 +13,10 @@ class DayListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        DayController.shared.fetchedResultsController.delegate = self
+        // DayController.shared.fetchedResultsController.delegate = self
         tableView.reloadData()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_1.jpg")!)
-        self.tableView.backgroundColor = UIColor(patternImage: UIImage(named: "background_1.jpg")!)
+        self.view.backgroundColor = UIColor.specialGray
+        self.tableView.backgroundColor = UIColor.specialGray
         
     }
 
@@ -24,6 +24,7 @@ class DayListTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
+    
     @IBAction func refreshPulled(_ sender: Any) {
         tableView.reloadData()
         refreshControl?.endRefreshing()
@@ -38,22 +39,22 @@ class DayListTableViewController: UITableViewController {
     }()
     
     // MARK: - Table view data source
-
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let sections = DayController.shared.fetchedResultsController.sections else { return 0 }
-        let sectionInfo = sections[section]
-        return sectionInfo.numberOfObjects
+//        guard let count = DayController.shared.fetchedResultsController.fetchedObjects?.count else { return 0 }
+//        return count
+        return DayController.shared.days.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dayCell", for: indexPath)
         
-        let day = DayController.shared.fetchedResultsController.object(at: indexPath)
+        //let day = DayController.shared.fetchedResultsController.object(at: indexPath)
+        let day = DayController.shared.days[indexPath.row]
         cell.textLabel?.text = day.moodName
         //FIXME: Maybe fix this bang operator here, but the end build will probably look differnt 
-        cell.detailTextLabel?.text = dateformatter.string(from: day.dayDate as! Date)
+        cell.detailTextLabel?.text = dateformatter.string(from: day.dayDate!)
         cell.backgroundColor = UIColor.clear
         return cell
     }
@@ -64,7 +65,8 @@ class DayListTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let day = DayController.shared.fetchedResultsController.object(at: indexPath)
+            //let day = DayController.shared.fetchedResultsController.object(at: indexPath)
+            let day = DayController.shared.days[indexPath.row] 
             DayController.shared.deleteDay(day: day)
            tableView.reloadData()
         }
@@ -75,7 +77,7 @@ class DayListTableViewController: UITableViewController {
 
 }
 
-
+/*
 extension DayListTableViewController: NSFetchedResultsControllerDelegate {
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
@@ -114,4 +116,4 @@ extension DayListTableViewController: NSFetchedResultsControllerDelegate {
     }
     
     
-}
+} */

@@ -16,8 +16,8 @@ extension Medication {
         self.medName = medName
         self.dosage = dosage
         self.isCurrent = isCurrent
-        self.startDate = startDate as NSDate?
-        self.endDate = endDate as NSDate?
+        self.startDate = startDate
+        self.endDate = endDate
         self.notes = notes
         
     }

@@ -13,12 +13,11 @@ extension Day {
     
     convenience init(dayDate: Date = Date(), hrSlept: Double, minExercised: Int64, moodName: String, moodState: String, medsTaken: Bool = false, context: NSManagedObjectContext = CoreDataStack.context) {
         self.init(context: context)
-        self.dayDate = dayDate as NSDate
+        self.dayDate = dayDate 
         self.hrSlept = hrSlept
         self.minExercised = minExercised
         self.moodName = moodName
         self.moodState = moodState
-        self.medsTaken = medsTaken
     }
     
     

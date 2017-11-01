@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MoodSelectionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MoodSelectionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
     
     var moodState: String = MoodController.moodState.H.rawValue
     
@@ -24,7 +24,7 @@ class MoodSelectionViewController: UIViewController, UITableViewDataSource, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            moodTable.backgroundColor = UIColor(patternImage: UIImage(named: "background_1.jpg")!)
+            moodTable.backgroundColor = UIColor.specialGray
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -34,8 +34,15 @@ class MoodSelectionViewController: UIViewController, UITableViewDataSource, UITa
         neutralButton.setImage(#imageLiteral(resourceName: "Neutral"), for: .selected)
         sadButton.setImage(#imageLiteral(resourceName: "emptyCircle"), for: .normal)
         sadButton.setImage(#imageLiteral(resourceName: "Sad"), for: .selected)
-        
+        moodNameTextField.delegate = self
     }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        moodNameTextField.resignFirstResponder()
+        return true
+    }
+    
+    
     @IBAction func happyButtonTapped(_ sender: UIButton) {
         if sadButton.isSelected || neutralButton.isSelected {
             happyButton.isSelected = true
@@ -80,7 +87,7 @@ class MoodSelectionViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     
-    func keyboardWillShow(notification: NSNotification) {
+    @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             
             if self.view.frame.origin.y == 0{
@@ -89,7 +96,7 @@ class MoodSelectionViewController: UIViewController, UITableViewDataSource, UITa
         }
     }
     
-    func keyboardWillHide(notification: NSNotification) {
+    @objc func keyboardWillHide(notification: NSNotification) {
        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y != 0{
                 self.view.frame.origin.y += keyboardSize.height
@@ -127,7 +134,7 @@ class MoodSelectionViewController: UIViewController, UITableViewDataSource, UITa
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "backToDayView" {
-            guard let controller = segue.destination as? DaySummaryViewController else { return }
+            guard let controller = segue.destination as? DaySummaryTableViewController else { return }
             guard let sendMood = mood else { return }
             controller.mood = sendMood
         }

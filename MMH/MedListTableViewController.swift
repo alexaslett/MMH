@@ -15,7 +15,7 @@ class MedListTableViewController: UITableViewController {
         super.viewDidLoad()
 
         MedicationController.shared.fetchedResultsController.delegate = self
-        
+        tableView.backgroundColor = UIColor.specialGray
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,6 +43,7 @@ class MedListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "medCell", for: indexPath)
         let med = MedicationController.shared.fetchedResultsController.object(at: indexPath)
         cell.textLabel?.text = med.medName
+        cell.backgroundColor = .clear
         return cell
     }
  
@@ -73,8 +74,8 @@ class MedListTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toEditMed" {
-            guard let indexPath = tableView.indexPathForSelectedRow, let destinationVC = segue.destination as? MedAddViewController else { return }
+        if segue.identifier == "toEditMeds" {
+            guard let indexPath = tableView.indexPathForSelectedRow, let destinationVC = segue.destination as? MedAddTableViewController else { return }
             let medication = MedicationController.shared.fetchedResultsController.object(at: indexPath)
             destinationVC.medication = medication
         }

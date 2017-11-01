@@ -25,7 +25,7 @@ class MedSearchTableViewController: UITableViewController, UISearchBarDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.backgroundColor = UIColor.specialGray
     }
 
     var suggestions: [String] = []
@@ -46,6 +46,7 @@ class MedSearchTableViewController: UITableViewController, UISearchBarDelegate, 
         
         let suggestion = suggestions[indexPath.row]
         cell.textLabel?.text = suggestion
+        cell.backgroundColor = .clear
 
         return cell
     }
@@ -57,7 +58,7 @@ class MedSearchTableViewController: UITableViewController, UISearchBarDelegate, 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "inputMeds" {
-            guard let indexPath = tableView.indexPathForSelectedRow, let destinationVC = segue.destination as? MedAddViewController else { return }
+            guard let indexPath = tableView.indexPathForSelectedRow, let destinationVC = segue.destination as? MedAddTableViewController else { return }
             let sugggetion = suggestions[indexPath.row]
             destinationVC.medName = sugggetion
         }

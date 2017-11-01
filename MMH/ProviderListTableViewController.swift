@@ -15,7 +15,8 @@ class ProviderListTableViewController: UITableViewController {
         super.viewDidLoad()
         
     ProviderController.shared.fetchedResultsController1.delegate = self
-
+        
+        tableView.backgroundColor = UIColor.specialGray
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -42,6 +43,7 @@ class ProviderListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "providerCell", for: indexPath)
         let provider = ProviderController.shared.fetchedResultsController1.object(at: indexPath)
         cell.textLabel?.text = provider.name
+        cell.backgroundColor = .clear
         return cell
     }
  
@@ -73,7 +75,7 @@ class ProviderListTableViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toEditProvider" {
-            guard let indexPath = tableView.indexPathForSelectedRow, let destinationVC = segue.destination as? AddProviderViewController else { return }
+            guard let indexPath = tableView.indexPathForSelectedRow, let destinationVC = segue.destination as? AddProviderTableViewController else { return }
             let provider = ProviderController.shared.fetchedResultsController1.object(at: indexPath)
             destinationVC.provider = provider
         }
